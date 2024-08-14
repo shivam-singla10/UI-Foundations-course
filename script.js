@@ -88,7 +88,6 @@ function deleteRow() {
 
   for (var i = checkboxes.length - 1; i >= 0; i--) {
     if (checkboxes[i].checked) {
-      var row = checkboxes[i].parentElement.parentElement;
       table.deleteRow(i);
       removeFromList(i);
     }
