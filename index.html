@@ -1,97 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project 1</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabbed Interface with CRUD Operations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Tab1')">Table</button>
+      <button class="tablinks" onclick="openTab(event, 'Tab2')">List</button>
+      <button class="tablinks" onclick="openTab(event, 'Tab3')">
+        Profile & Activities
+      </button>
+    </div>
 
-<div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Tab1')">Table</button>
-    <button class="tablinks" onclick="openTab(event, 'Tab2')">List</button>
-    <button class="tablinks" onclick="openTab(event, 'Tab3')">Profile & Activities</button>
-</div>
-
-<div id="Tab1" class="tabcontent">
-    <h3>Table</h3>
-    <button onclick="openModal('add', 'table')">Insert</button>
-    <button onclick="deleteRow()">Delete</button>
-    <table id="dataTable">
+    <div id="Tab1" class="tabcontent">
+      <h3>Table</h3>
+      <button onclick="openModal('add', 'table')">Insert</button>
+      <button onclick="deleteRow()">Delete</button>
+      <table id="dataTable">
         <thead>
-            <tr>
-                <th>Select</th>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Actions</th>
-            </tr>
+          <tr>
+            <th>Select</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Actions</th>
+          </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td><input type="checkbox"></td>
-                <td>Shivam Singla</td>
-                <td>22</td>
-                <td><button onclick="openModal('edit', 'table', this)">Edit</button></td>
-            </tr>
-            
-        </tbody>
-    </table>
-</div>
+        <tbody></tbody>
+      </table>
+    </div>
 
-<div id="Tab2" class="tabcontent">
-    <h3>List</h3>
-    <button onclick="openModal('add', 'list')">Insert</button>
-    <button onclick="deleteListItem()">Delete</button>
-    <ul id="dataList">
-        <li>
-            <input type="checkbox">
-            <span class="item_name">Shivam</span>
-            <button onclick="openModal('edit', 'list', this)">Edit</button>
-        </li>
-        
-    </ul>
-</div>
+    <div id="Tab2" class="tabcontent">
+      <h3>List</h3>
+      <ul id="dataList"></ul>
+    </div>
 
-<div id="Tab3" class="tabcontent">
-    <h3>Profile & Activities</h3>
-    <div class="flex-container">
-        
+    <div id="Tab3" class="tabcontent">
+      <h3>Profile & Activities</h3>
+      <div class="flex-container">
         <div class="flex-item profile">
-            <h4>Profile Overview</h4>
-            <img src="profile.jpg" alt="Profile Picture">
-            <p><strong>Name:</strong> Shivam Singla</p>
-            <p><strong>Position:</strong> Software Engineer 1</p>
-            <p><strong>Office Location:</strong> Bengaluru, Karnataka</p>
+          <h4>Profile Overview</h4>
+          <img src="profile.jpg" alt="Profile Picture" />
+          <p><strong>Name:</strong> Shivam Singla</p>
+          <p><strong>Position:</strong> Software Engineer 1</p>
+          <p><strong>Office Location:</strong> Bengaluru, Karnataka</p>
         </div>
 
         <!-- Recent Activities -->
         <div class="flex-item activities">
-            <h4>Recent Activities</h4>
-            <ul>
-                <li>Completed monolith setup</li>
-                <li>Uplimit courses almost completed</li>
-                <li>1st part of project on HTML, CSS, JavaScript completed </li>
-                
-            </ul>
+          <h4>Recent Activities</h4>
+          <ul>
+            <li>Completed monolith setup</li>
+            <li>Uplimit courses almost completed</li>
+            <li>1st part of project on HTML, CSS, JavaScript completed</li>
+          </ul>
         </div>
+      </div>
     </div>
-</div>
 
-<div id="myModal" class="modal">
-    <div class="modal-content">
+    <div id="myModal" class="modal">
+      <div class="modal-content">
         <span class="close">&times;</span>
         <form id="modalForm">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name"><br>
-            <label for="age" id="ageLabel">Age:</label><br>
-            <input type="text" id="age" name="age"><br><br>
-            <button type="button" onclick="saveData()">Save</button>
+          <label for="name">Name:</label><br />
+          <input type="text" id="name" name="name" /><br />
+          <label for="age" id="ageLabel">Age:</label><br />
+          <input type="text" id="age" name="age" /><br /><br />
+          <button type="button" onclick="saveData()">Save</button>
         </form>
+      </div>
     </div>
-</div>
 
-<script src="script.js"></script>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
