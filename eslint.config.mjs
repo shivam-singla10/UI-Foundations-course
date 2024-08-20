@@ -11,5 +11,10 @@ export default [
         "no-unused-vars": "warn",
         "no-undef": "warn"
     }
+
+},
+{
+  "plugins":["html"]
 }
+
 ];
